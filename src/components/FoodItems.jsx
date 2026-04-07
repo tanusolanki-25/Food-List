@@ -1,12 +1,18 @@
 import Item from "./Item"
 
-function FoodItems({items}) {
+function FoodItems({items, handleOnChange}) {
   return (
-      <ul className="list-group w-50 mx-auto mt-4">
-        {items.map((item) => (
-          <Item key={item} item={item} />
-        ))}
-      </ul>
+    <div className="d-flex justify-content-center my-4">
+      <div className="w-50 w-md-25">
+       <ul className="list-group ">
+         {items.map((item) => (
+           <Item key={item}
+            item={item} 
+            handleOnChange={handleOnChange}/>
+          ))}
+          </ul>
+        </div>
+       </div>
   )
 }
 
